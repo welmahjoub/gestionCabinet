@@ -1,0 +1,23 @@
+	var dataPoints = [];
+	
+	
+	
+	
+	 $.ajax({
+	        url: "/Patient/donnePhysiolog",
+	        type: 'GET',
+	         data: {  },
+	        success: function (tab) {
+	        	
+	        	jQuery.each(tab, (index, item) => {
+	        		dataPoints.push({ x: item.date , y: item.temperatureCorporelle });
+	        		
+	        		
+	        	});
+	            
+	            
+	        },
+	        error: function () {
+	            alert("error");
+	        }
+	    });

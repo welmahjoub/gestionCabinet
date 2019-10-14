@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!--=============================================================================================================== -->
+    <!--===========================================   Head  ============================================= -->
+	<!-- =============================================================================================================== -->
+
+	<div th:include="Admin/Include::head"></div>
+
+	<!--=============================================================================================================== -->
+    <!--===========================================  FIN head  ============================================= -->
+	<!-- =============================================================================================================== -->
+
+	<!--=============================================================================================================== -->
+    <!--===========================================   Body  ============================================= -->
+	<!-- =============================================================================================================== -->
+<body>
+
+	<!--=============================================================================================================== -->
+    <!--===========================================  Menu header  ============================================= -->
+	<!-- =============================================================================================================== -->
+
+		<div th:include="Admin/Include::header"> </div>
+
+	<!--=============================================================================================================== -->
+    <!--===========================================  FIN Menu header   ============================================= -->
+	<!-- =============================================================================================================== -->
+
+	<!--=============================================================================================================== -->
+    <!--===========================================  Center   ============================================= -->
+	<!-- =============================================================================================================== -->
+
+	<article>
+
+		<div class="container">
+			
+			<!-- ==================================================================== -->
+			<!--==================== Affiche Information Medecin  ============= -->
+		    <!-- ==================================================================== -->
+			<form action="/Admin/ModifierMedecin" method="post" enctype="multipart/form-data">
+
+					<!--===================================================================== -->
+		           <!--==================== Image ============= -->
+		           <!-- ==================================================================== -->
+		           
+		           <div class="form-group">
+
+		            <center>
+		              <img th:src="@{'/img/'+${medecin.image}}" class="rounded float-left" 
+		                   id="label" name="label" style="width: 200px;height: 200px;" /> 
+		            </center>
+
+		           </div>
+
+					<div class="form-row">
+
+			           <center>
+			              <input type="file" class="form-control-file" id="image" name="image" 
+                			onchange="changerImage(this);"  />
+                		</center>	
+
+			        </div>
+			        
+			        <br/>
+				
+					<!--===================================================================== -->
+				    <!--==================== Cin(n'est pas modifiable) et nom prenom   ============= -->
+					<!-- ==================================================================== -->
+
+					<div class="form-row">
+
+						<div class="form-group col-md-6">
+							<label for="inputEmail4">CIN</label> 
+							<input type="text"  required="required"  class="form-control" name="cin"  th:value="${medecin.cin}" placeholder="cin"
+						    readonly="readonly" />
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="nomprenom">NomPrenom</label>
+							<input type="text"  required="required"   class="form-control" th:value="${medecin.nomprenom}"   name="nomprenom"  
+							 	pattern="[A-Z a-z 0-9]*" 
+								oninvalid="setCustomValidity(' Nom et Prenom sont obligatoires ')"
+								oninput="setCustomValidity('')" placeholder="Nom Prenom" />
+						</div>
+
+					</div>
+
+					<!--===================================================================== -->
+				    <!--==================== login et password   ============= -->
+					<!-- ==================================================================== -->
+
+					<div class="form-row">
+
+						<div class="form-group col-md-6">
+							<label for="login">Username</label> 
+							<input type="text" class="form-control"  th:value="${medecin.login}" name="login" placeholder="Username" required="required" 
+							oninvalid="setCustomValidity(' Username obligatoire ')"
+							oninput="setCustomValidity('')" />
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="password">Password</label>
+							<input type="password"   class="form-control" name="password"  th:value="${medecin.password}"  placeholder="Password" required="required"
+							oninvalid="setCustomValidity(' Password obligatoire ')"
+							oninput="setCustomValidity('')" />
+						</div>
+
+					</div>
+
+					<!--===================================================================== -->
+					<!--==================== telephone et domicile   ============= -->
+				    <!-- ==================================================================== -->
+
+	  				<div class="form-row">
+
+						<div class="form-group col-md-6">
+							<label for="telephone">Telephone</label> 
+							<input type="text"   class="form-control"  th:value="${medecin.telephone}"  name="telephone" placeholder="telephone"
+								pattern="[0-9]*" minlength="8" maxlength="8"
+								oninvalid="setCustomValidity(' Telephone valide : 8 chiffres ')"
+								oninput="setCustomValidity('')" />
+						</div>
+
+						<div class="form-group col-md-6">
+							<label for="password">Domicile</label>
+							<input type="text" class="form-control"  th:value="${medecin.domicile}"   name="domicile" placeholder="domicile"
+								pattern="[0-9]*" minlength="8" maxlength="8"
+								oninvalid="setCustomValidity(' Domicile valide : 8 chiffres ')"
+								oninput="setCustomValidity('')" />
+						</div>
+
+					</div>
+
+				    <!--===================================================================== -->
+					<!--==================== specilaite email et adresse  ============= -->
+				    <!-- ==================================================================== -->
+
+	  				<div class="form-row">
+
+						<div class="form-group col-md-6">
+							<label for="email">Email</label> 
+							<input type="text" class="form-control" th:value="${medecin.email}"   name="email" placeholder="email" oninvalid="setCustomValidity('Email valide : _____@_____ ')"
+							  oninput="setCustomValidity('')"/>
+						</div>
+
+						<div class="form-group col-md-3">
+							<label for="adresse">Adresse</label>
+							<input type="text" class="form-control" th:value="${medecin.adresse}"  name="adresse" placeholder="adresse"/>
+						</div>
+						<div class="form-group col-md-3">
+							<label for="specialite">Spécialité</label> 
+							<input   type="text" class="form-control" th:value="${medecin.specialite}"   name="specialite"/>
+						</div>
+
+					</div>
+
+					<!--===================================================================== -->
+					<!--==================== button Enregister   ============= -->
+					<!-- ==================================================================== -->
+					
+					<div class="form-group col-md-12">
+						<button type="submit" class="btn btn-primary mb-2">
+						    <span class="glyphicon glyphicon-saved"></span>
+						    Enregistrer
+						</button>
+					</div>
+
+			</form>
+
+		</div>
+
+
+			<!-- ==================================================================== -->
+			<!--==================== Affiche Table Liste patients  ============= -->
+		    <!-- ==================================================================== -->
+
+		<div class="container">
+			<hr/>
+			
+			<h3> <center> Liste des patients : </center> </h3>
+			
+
+			<table class="table">
+
+					<!-- ==================================================================== -->
+					<!--==================== tete du table Liste patients ============= -->
+		    		<!-- ==================================================================== -->
+
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Cin</th>
+							<th scope="col">Nom Prenom</th>
+							<th scope="col">Adresse</th>
+							<th scope="col">Email</th>
+							<th scope="col">Date Naissance</th>
+						</tr>
+					</thead>
+
+					<!-- ==================================================================== -->
+					<!--==================== contenu du table liste patients  ============= -->
+		    		<!-- ==================================================================== -->
+
+					<tbody th:each="patient : ${patients}">
+						<tr>
+							<td scope="row" th:text="${patient.cin}">...</td>
+							<td th:text="${patient.nomprenom}">...</td>
+							<td th:text="${patient.adresse}">...</td>
+							<td th:text="${patient.email}">...</td>
+							<td th:text="${patient.date}">...</td>
+							
+
+							<td><a th:href="@{/Admin/DeletePatient(cin=${patient.cin})}"
+								onclick="return confirm('voullez vous supprimer le Patient ?');"
+								class="badge badge-primary"> <span class="glyphicon glyphicon-trash"></span> </a></td>
+
+						</tr>
+					</tbody>
+
+			</table>
+		
+			<br/>
+			<br/>
+			
+			<hr/>
+		</div> 
+
+			<!-- ==================================================================== -->
+			<!--==================== FIN Tableau Liste Patient  ============= -->
+		    <!-- ==================================================================== -->
+
+
+
+	</article>
+
+	<!--=============================================================================================================== -->
+    <!--===========================================   FIN Center  ============================================= -->
+	<!-- =============================================================================================================== -->
+
+	<!--=============================================================================================================== -->
+  <!--=========================================== Changer Image   ============================================= -->
+  <!-- =============================================================================================================== -->
+
+  <script type="text/javascript">
+    
+    function changerImage(input)
+    {
+
+      $('#label')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
+
+    }
+
+  </script>
+
+  <!--=============================================================================================================== -->
+  <!--===========================================  FIN Changer Image   ============================================= -->
+  <!-- =============================================================================================================== -->
+</body>
+
+	<!--=============================================================================================================== -->
+    <!--===========================================  FIN  body  ============================================= -->
+	<!-- =============================================================================================================== -->
+	
+</html>

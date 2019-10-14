@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> Home </title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+<body>
+      <!--=============================================================================================================== -->
+  <!--===========================================   menu  ============================================= -->
+  <!-- =============================================================================================================== -->
+
+	<header>
+
+		<div id="menu">
+
+			<nav class="navbar navbar-inverse">
+
+				<div class="container-fluid">
+
+					<!--===================================================================== -->
+					<!--==================== App EHealth ============= -->
+					<!-- ==================================================================== -->
+
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#" aria-disabled="true"> <i
+							class="fa fa-heartbeat"></i> App EHealth
+						</a>
+					</div>
+
+					<!--===================================================================== -->
+					<!--==================== Home  ============= -->
+					<!-- ==================================================================== -->
+
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="/Admin/"> <span
+								class="glyphicon glyphicon-home"></span> Home
+						</a></li>
+
+						<!--===================================================================== -->
+						<!--====================Liste Patients et ajouter Patient  ============= -->
+						<!-- ==================================================================== -->
+
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="/Admin/"> <i class="fa fa-user-o"
+								aria-hidden="true"></i> Patients <span class="caret"></span>
+						</a>
+
+							<ul class="dropdown-menu">
+								<li><a href="/Admin/listePatients"> <span
+										class="glyphicon glyphicon-list-alt"></span> Liste des Patients
+								</a></li>
+								<li><a href="/Admin/ForumlaireAddPatient"> <span
+										class="glyphicon glyphicon-plus"></span> Ajouter Patient
+								</a></li>
+							</ul></li>
+
+						<!--===================================================================== -->
+						<!--==================== liste Medecins et ajouter medecin ============= -->
+						<!-- ==================================================================== -->
+
+						<li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="/Admin/listeMedecins"> <i
+								class="fa fa-user-md"></i> Medecins <span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu">
+								<li><a href="/Admin/listeMedecins"> <span
+										class="glyphicon glyphicon-list-alt"></span>Liste des Medecins
+								</a></li>
+								<li><a href="/Admin/ForumlaireAddMedecin"> <span
+										class="glyphicon glyphicon-plus"></span> Ajouter Medecin
+								</a></li>
+							</ul></li>
+
+						<!--===================================================================== -->
+						<!--==================== FORUM  ============= -->
+						<!-- ==================================================================== -->
+
+						<li class="active"><a href="/Admin/Forum"> <i
+								class="fa fa-foursquare"></i> Forum
+						</a></li>
+
+					</ul>
+
+					<!--===================================================================== -->
+					<!--==================== Profile et Login ============= -->
+					<!-- ==================================================================== -->
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><a href="/Admin/Profile"> <span
+								class="glyphicon glyphicon-user"></span> Profile
+						</a></li>
+
+						<li><a href="/Logout"> <span
+								class="glyphicon glyphicon-log-out"></span> Logout
+						</a></li>
+
+					</ul>
+
+					<!--===================================================================== -->
+					<!--==================== ============= -->
+					<!-- ==================================================================== -->
+
+				</div>
+
+			</nav>
+
+		</div>
+
+	</header>
+
+  <!--=============================================================================================================== -->
+  <!--===========================================  fin menu  ============================================= -->
+  <!-- =============================================================================================================== -->
+      
+</body>
+</html>
