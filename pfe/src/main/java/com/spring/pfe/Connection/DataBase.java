@@ -247,18 +247,18 @@ public class DataBase {
 			
 			String date=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 		
-			Patient p1=new Patient("11111111", "dhia Sediri","patient1", "patient1" ,"thumb.png",
-					"souse", "mahjoubwel@gmail.com", "22330545","22330545", date , new Medecin("55555555"));
+			Patient p1=new Patient("11111111", "dhbia o","patient1", "patient1" ,"thumb.png",
+					"souse", "m", "","", date , new Medecin("55555555"));
 			
 			
-			Patient p2=new Patient("22222222", "lafdal Mohamed ","patient2", "patient2","thumb.png",
-					"tunis", "mahjoubwel@gmail.com", "33660202","33660202", date , new Medecin("55555555"));
+			Patient p2=new Patient("22222222", " Mohamebbod ","patient2", "patient2","thumb.png",
+					"tunis", "", "","", date , new Medecin("55555555"));
 
-			Patient p3=new Patient("33333333", "mahjoub Mohamed " , "patient3", "patient3" ,"thumb.png"
-					,  "gabes", "mahjoubwel@gmail.com", "36001630","36001630",date , new Medecin("66666666"));
+			Patient p3=new Patient("33333333", " Mohambed " , "patient3", "patient3" ,"thumb.png"
+					,  "gabes", "", "","",date , new Medecin("66666666"));
 			
-			Patient p4=new Patient("44444444", "abderhaman " , "patient4", "patient4","thumb.png"
-					, "tunis", "mahjoubwel@gmail.com", "20859634","20859634",date , new Medecin("66666666"));
+			Patient p4=new Patient("44444444", " " , "patient4", "patient4","thumb.png"
+					, "tunis", "", "20859634","",date , new Medecin("66666666"));
 			
 			patientDao.Ajouter(p1);
 			patientDao.Ajouter(p2);
@@ -278,8 +278,8 @@ public class DataBase {
 		if(nb==0) 
 		{
 			
-		 Administrateur admin1 = new Administrateur("99999999", "dhiasediri", "admin1", "admin1", "doctor4.jpg");
-		 Administrateur admin2 = new Administrateur("10101010", "mahjoub", "admin2", "admin2", "doctor4.jpg");
+		 Administrateur admin1 = new Administrateur("99999999", "dhiajjsediri", "admin1", "admin1", "doctor4.jpg");
+		 Administrateur admin2 = new Administrateur("10101010", "j", "admin2", "admin2", "doctor4.jpg");
 		 
 		 adminDao.Ajouter(admin1);
 		 adminDao.Ajouter(admin2);
